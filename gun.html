@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psychology Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .fact-display {
+            margin: 20px 0;
+            font-size: 1.2em;
+            min-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Psychology Facts</h1>
+        <div id="factDisplay" class="fact-display"></div>
+        <button id="nextFactButton">Show Next Fact</button>
+    </div>
+    <script>
+        const facts = [
+            "Psychology is the scientific study of the mind and behavior.",
+            "The term 'psychology' comes from the Greek words 'psyche,' meaning soul or mind, and 'logos,' meaning study or discourse.",
+            "Psychology has several branches, including clinical psychology, cognitive psychology, developmental psychology, social psychology, and industrial-organizational psychology.",
+            "Key figures in the history of psychology include Sigmund Freud, Carl Jung, B.F. Skinner, and Jean Piaget.",
+            "Psychologists use various research methods, including experiments, surveys, case studies, and observational studies.",
+            "Major psychological theories include behaviorism, cognitive theory, humanistic psychology, and psychoanalysis.",
+            "This branch focuses on diagnosing and treating mental disorders and emotional problems.",
+            "This area studies mental processes such as perception, memory, and problem-solving.",
+            "This branch examines how people grow and change from infancy through old age.",
+            "This field explores how individuals are influenced by social interactions and group dynamics.",
+            "This area applies psychological principles to workplace environments to improve productivity and employee well-being.",
+            "Psychologists often use standardized tests to assess cognitive abilities, personality traits, and emotional functioning.",
+            "Common therapeutic techniques include cognitive-behavioral therapy (CBT), psychodynamic therapy, and humanistic therapy.",
+            "Psychology plays a crucial role in understanding and treating mental health issues, such as depression, anxiety, and schizophrenia.",
+            "The field of psychology is closely related to neuroscience, which studies the brain and nervous system's role in behavior and mental processes.",
+            "Psychology recognizes the impact of culture on behavior and mental processes, leading to the development of cross-cultural psychology.",
+            "Psychologists adhere to ethical guidelines to ensure the welfare and rights of research participants and clients.",
+            "Many psychologists hold advanced degrees, such as a Ph.D. or Psy.D., and require licensure to practice clinically.",
+            "Psychology is applied in various fields, including education, health, sports, and law.",
+            "Psychology is often misunderstood by the public, leading to misconceptions about mental health and the work of psychologists."
+        ];
+
+        let currentFactIndex = 0;
+
+        document.getElementById('nextFactButton').addEventListener('click', function() {
+            if (currentFactIndex < facts.length) {
+                document.getElementById('factDisplay').innerText = facts[currentFactIndex];
+                currentFactIndex++;
+            } else {
+                document.getElementById('factDisplay').innerText = "No more facts available.";
+                this.disabled = true; // Disable button after all facts are shown
+            }
+        });
+    </script>
+</body>
+</html>
+
